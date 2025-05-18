@@ -5,62 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Perkenalan Diri</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #74ebd5, #9face6);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      animation: fadeIn 2s ease-in;
+      animation: gradientMove 15s ease infinite;
+      background: linear-gradient(-45deg, #74ebd5, #9face6, #8ec5fc, #e0c3fc);
+      background-size: 400% 400%;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      max-width: 400px;
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       text-align: center;
-      animation: fadeInCard 1.5s ease-out;
+      max-width: 500px;
+      width: 90%;
     }
 
-    @keyframes fadeInCard {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #9face6;
+    h2 {
+      font-size: 24px;
+      color: #666;
+      margin-bottom: 10px;
     }
 
     h1 {
-      margin: 10px 0;
+      font-size: 32px;
       color: #333;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
-    p {
+    #typing {
       color: #555;
-      margin-bottom: 0;
+      font-size: 18px;
+      white-space: pre-wrap;
+      display: inline-block;
+      border-right: 2px solid #333;
+      min-height: 3em;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Darrell christian</h1>
-    <p>Halo! aku Darrell aku lagi belajar tentang bahasa pemograman HTML, CSS, dan JavaScript dan inilah web pertamaku!.</p>
+  <div class="container">
+    <h2>Nama Kamu</h2>
+    <h1>Darrell Christian</h1>
+    <p id="typing"></p>
   </div>
+
+  <audio id="typeSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c9a6aab7b1.mp3?filename=keyboard-typing-105778.mp3"></audio>
+
+  <script>
+    const text = "Halo! Saya seorang web developer yang senang membuat website interaktif dan menarik.";
+    const typingElement = document.getElementById("typing");
+    const sound = document.getElementById("typeSound");
+
+    let index = 0;
+
+    function typeNextChar() {
+      if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        sound.currentTime = 0;
+        sound.play();
+        index++;
+        setTimeout(typeNextChar, 55); // kecepatan mengetik
+      } else {
+        typingElement.style.borderRight = 'none'; // hilangkan kursor setelah selesai
+      }
+    }
+
+    typeNextChar();
+  </script>
 </body>
 </html>
