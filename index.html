@@ -51,16 +51,32 @@
       color: #333;
     }
 
-    p {
+    .typing {
       color: #555;
-      margin-bottom: 0;
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #333;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Darrell Christian</h1>
-    <p>Halo! namaku Darrell aku adalah siswa di SMPK PBJ aku sedang belajar cara menggunakan html/css dan javascript dan ini web pertama aku!</p>
+    <img src="https://via.placeholder.com/120" alt="Foto Profil" class="profile-img">
+    <h1>Nama Kamu</h1>
+    <p class="typing">Halo! Saya seorang web developer yang senang membuat website interaktif.</p>
   </div>
 </body>
 </html>
