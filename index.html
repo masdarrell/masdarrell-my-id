@@ -6,47 +6,79 @@
   <title>Perkenalan Diri</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #588b96;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      animation: fadeIn 2s ease-in;
     }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     .card {
-      background: rgb(238, 243, 244);
+      background: white;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       max-width: 400px;
       text-align: center;
+      animation: fadeInCard 1.5s ease-out;
     }
+
+    @keyframes fadeInCard {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
     .profile-img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 20px;
+      border: 3px solid #9face6;
     }
+
     h1 {
       margin: 10px 0;
       color: #333;
     }
+
     p {
-      color: #666;
+      color: #555;
+      margin-bottom: 20px;
     }
+
     .socials a {
-      margin: 0 10px;
+      margin: 0 8px;
       text-decoration: none;
       color: #0077cc;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .socials a:hover {
+      color: #ff5e5e;
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Darrell Christian</h1>
-    <p>Halo! Namaku  Darrell Aku Sedang belajar cara menggunakan html/css dan js Dan ini web pertamaku.</p>
+    <p>Halo! namaku Darrell aku adalah siswa di SMPK PBJ aku sedang belajar cara menggunakan html/css dan javascript dan ini web pertama aku!</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
 </body>
 </html>
