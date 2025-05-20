@@ -3,104 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Perkenalan Darrell 🌸</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <title>Darrell - Web Teknologi 🤖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Quicksand', sans-serif;
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
-      overflow: hidden;
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+      color: #eee;
+      font-family: 'Roboto', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 50px 20px;
+      overflow: hidden;
       position: relative;
     }
 
-    /* Aesthetic blurry shapes */
-    .blob {
+    .tech-grid {
       position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle at 30% 30%, #ffdde1, #ee9ca7);
-      filter: blur(100px);
-      border-radius: 50%;
-      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-linear-gradient(#0f0f0f 1px, transparent 1px),
+                        repeating-linear-gradient(90deg, #0f0f0f 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.05;
       z-index: 0;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .blob2 {
-      top: 60%;
-      left: 70%;
-      background: radial-gradient(circle at 70% 70%, #c1dfc4, #deecdd);
-      animation-delay: 5s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-30px); }
     }
 
     .card {
       position: relative;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(10px);
-      border-radius: 25px;
+      border: 1px solid #0ff;
+      border-radius: 20px;
       padding: 40px;
-      max-width: 550px;
+      max-width: 600px;
       text-align: center;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 30px #0ff4;
       z-index: 1;
     }
 
     h2 {
-      color: #a78295;
-      font-size: 1.2em;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3em;
+      color: #0ff;
       margin-bottom: 10px;
     }
 
     h1 {
-      color: #4b4b4b;
-      font-size: 2.1em;
-      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2em;
+      color: #fff;
       margin-bottom: 20px;
     }
 
     p {
-      color: #555;
       font-size: 1.05em;
       line-height: 1.6;
+      color: #ccc;
       margin-bottom: 15px;
+    }
+
+    .emoji {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     .btn {
       margin-top: 20px;
       padding: 10px 25px;
-      background: #a78295;
-      color: white;
+      background: #00fff7;
+      color: #000;
       border: none;
-      border-radius: 30px;
-      text-decoration: none;
+      border-radius: 25px;
       font-weight: bold;
-      transition: 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
     }
 
     .btn:hover {
-      background: #8b5e7c;
-    }
-
-    .emoji {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
+      background: #00b3ad;
     }
 
     @media (max-width: 600px) {
@@ -112,19 +108,17 @@
 </head>
 <body>
 
-  <!-- Aesthetic background blobs -->
-  <div class="blob" style="top: 10%; left: 10%;"></div>
-  <div class="blob blob2"></div>
+  <div class="tech-grid"></div>
 
   <div class="card" data-aos="fade-up">
-    <div class="emoji">🌸💫</div>
-    <h2>Selamat Datang!</h2>
+    <div class="emoji">🤖</div>
+    <h2>Selamat Datang di Dunia Teknologi</h2>
     <h1>Darrell Christian</h1>
-    <p>Halo! Aku Darrell, sedang belajar pemrograman web di SMPK PBJ.</p>
-    <p>Aku suka bermain game 🎮, mendengarkan musik 🎧, dan belajar hal baru 📚.</p>
-    <p>Olahraga favoritku adalah basket 🏀 dan bulu tangkis 🏸.</p>
-    <p>Semoga kita bisa berteman dan saling mendukung!</p>
-    <a href="#" class="btn">Ayo Berteman 🌟</a>
+    <p>Halo! Saya Darrell, pelajar yang sedang mempelajari dunia pemrograman web di SMPK PBJ.</p>
+    <p>Saya suka bermain game 🎮, mendengarkan musik 🎧, dan belajar hal-hal baru dalam dunia digital.</p>
+    <p>Olahraga favorit saya adalah basket 🏀 dan bulu tangkis 🏸.</p>
+    <p>Senang bertemu denganmu di era teknologi ini!</p>
+    <a href="#" class="btn">Gabung Bersama 🤝</a>
   </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -134,5 +128,6 @@
       once: true
     });
   </script>
+
 </body>
 </html>
