@@ -3,61 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Perkenalan Darrell</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- AOS CSS -->
+  <title>Perkenalan Darrell 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Quicksand', sans-serif;
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      background: linear-gradient(to right top, #89f7fe, #66a6ff);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .cloud {
+      position: absolute;
+      top: 20px;
+      left: -100px;
+      font-size: 5rem;
+      animation: moveClouds 60s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes moveClouds {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(150vw); }
     }
 
     .card {
       background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
+      padding: 50px 30px;
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      max-width: 550px;
       text-align: center;
+      position: relative;
+      z-index: 10;
     }
 
     h2 {
-      color: #444;
-      font-size: 1.2em;
-      margin-bottom: 10px;
+      color: #ff7675;
+      font-size: 1.3em;
+      margin-bottom: 8px;
     }
 
     h1 {
-      color: #222;
-      font-size: 1.8em;
-      font-weight: 600;
+      font-size: 2.2em;
+      font-weight: 700;
       margin-bottom: 20px;
+      color: #2d3436;
     }
 
     p {
-      color: #555;
-      font-size: 1em;
-      line-height: 1.6;
+      font-size: 1.05em;
+      line-height: 1.7;
+      color: #444;
       margin-bottom: 15px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 25px;
-      background: #00b894;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: #fd79a8;
       color: white;
       border: none;
       border-radius: 30px;
@@ -67,7 +84,12 @@
     }
 
     .btn:hover {
-      background: #019875;
+      background: #e84393;
+    }
+
+    .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
     }
 
     @media (max-width: 600px) {
@@ -76,33 +98,42 @@
       }
 
       h1 {
-        font-size: 1.5em;
+        font-size: 1.6em;
       }
 
       p {
-        font-size: 0.95em;
+        font-size: 1em;
+      }
+
+      .emoji {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="card" data-aos="zoom-in">
-    <h2>Perkenalan diri</h2>
+  <!-- Cloud Animation -->
+  <div class="cloud">☁️</div>
+  <div class="cloud" style="top: 100px; animation-delay: 10s;">☁️</div>
+
+  <div class="card" data-aos="flip-up">
+    <div class="emoji">👋😄</div>
+    <h2>Hai Semuanya!</h2>
     <h1>Darrell Christian</h1>
-    <p>Halo! Nama saya Darrell. Aku lagi belajar pemrograman web dan sekolah di SMPK PBJ.</p>
-    <p>Aku suka bermain game, mendengarkan musik, dan belajar hal baru.</p>
-    <p>Aku juga suka olahraga seperti basket dan bulu tangkis.</p>
-    <p>Semoga kita bisa berteman!</p>
-    <a href="#" class="btn">Ayo Berteman!</a>
+    <p>Halo! Aku Darrell, sedang belajar pemrograman web di SMPK PBJ.</p>
+    <p>Aku suka <strong>main game</strong> 🎮, <strong>dengerin musik</strong> 🎧, dan <strong>belajar hal baru</strong> 📚.</p>
+    <p>Olahraga favoritku adalah <strong>basket</strong> 🏀 dan <strong>bulu tangkis</strong> 🏸.</p>
+    <p>Senang bisa berbagi dan semoga kita bisa berteman!</p>
+    <a href="#" class="btn">Ayo Berteman 🎈</a>
   </div>
 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 1000, // durasi animasi dalam milidetik
-      once: true      // hanya animasi sekali
+      duration: 1200,
+      once: true
     });
   </script>
 
