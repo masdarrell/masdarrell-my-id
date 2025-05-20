@@ -3,96 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Perkenalan Diri</title>
+  <title>Perkenalan Darrell</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      min-height: 100vh;
+      height: 100vh;
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
       display: flex;
-      justify-content: center;
       align-items: center;
-      animation: gradientMove 15s ease infinite;
-      background: linear-gradient(-45deg, #74ebd5, #9face6, #8ec5fc, #e0c3fc);
-      background-size: 400% 400%;
+      justify-content: center;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 25px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      text-align: center;
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       max-width: 500px;
-      width: 90%;
+      text-align: center;
+      animation: fadeIn 1s ease;
     }
 
     h2 {
-      font-size: 24px;
-      color: #666;
+      color: #444;
+      font-size: 1.2em;
       margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 32px;
-      color: #333;
-      font-weight: bold;
+      color: #222;
+      font-size: 1.8em;
+      font-weight: 600;
       margin-bottom: 20px;
     }
 
-    #typing {
+    p {
       color: #555;
-      font-size: 18px;
-      white-space: pre-wrap;
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .btn {
       display: inline-block;
-      border-right: 2px solid #333;
-      min-height: 3em;
+      margin-top: 15px;
+      padding: 10px 25px;
+      background: #00b894;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #019875;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.95em;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <div class="card">
     <h2>Perkenalan diri</h2>
     <h1>Darrell Christian</h1>
-    <p id="typing"></p>
+    <p>Halo! Nama saya Darrell. Aku lagi belajar pemrograman web dan sekolah di SMPK PBJ.</p>
+    <p>Aku suka bermain game, mendengarkan musik, dan belajar hal baru.</p>
+    <p>Aku juga suka olahraga seperti basket dan bulu tangkis.</p>
+    <p>Semoga kita bisa berteman!</p>
+    <a href="#" class="btn">Ayo Berteman!</a>
   </div>
 
-  <audio id="typeSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c9a6aab7b1.mp3?filename=keyboard-typing-105778.mp3"></audio>
-
-  <script>
-    const text = "Halo! Nama saya Darrell aku lagi belajar pemograman web. aku biasanya sekolah di SMPK PBJ!\n\n" +
-                 "Aku suka bermain game, mendengarkan musik, dan belajar hal baru.\n\n" +
-                 "Aku juga suka berolahraga seperti basket dan bulu tangkis.\n\n" +
-                 "Semoga kita bisa berteman!";
-    const typingElement = document.getElementById("typing");
-    const sound = document.getElementById("typeSound");
-
-    let index = 0;
-
-    function typeNextChar() {
-      if (index < text.length) {
-        typingElement.textContent += text.charAt(index);
-        sound.currentTime = 0;
-        sound.play();
-        index++;
-        setTimeout(typeNextChar, 55); // kecepatan mengetik
-      } else {
-        typingElement.style.borderRight = 'none'; // hilangkan kursor setelah selesai
-      }
-    }
-
-    typeNextChar();
-  </script>
 </body>
 </html>
