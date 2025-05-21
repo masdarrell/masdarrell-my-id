@@ -146,4 +146,25 @@
   </script>
 
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const joinBtn  = document.getElementById('joinBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const popup    = document.getElementById('popup');
+
+    joinBtn.addEventListener('click', () => {
+      popup.style.display = 'flex';       // munculkan popup
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';       // sembunyikan popup
+    });
+
+    // (opsional) klik di luar content juga bisa menutup popup
+    popup.addEventListener('click', e => {
+      if (e.target === popup) popup.style.display = 'none';
+    });
+  });
+</script>
+
 </html>
