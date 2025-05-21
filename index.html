@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Darrell - Web Teknologi</title>
+  <title>Darrell Perkenalan</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -145,26 +145,5 @@
     AOS.init({ duration: 1500, once: true });
   </script>
 
-</body>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const joinBtn  = document.getElementById('joinBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const popup    = document.getElementById('popup');
-
-    joinBtn.addEventListener('click', () => {
-      popup.style.display = 'flex';       // munculkan popup
-    });
-
-    closeBtn.addEventListener('click', () => {
-      popup.style.display = 'none';       // sembunyikan popup
-    });
-
-    // (opsional) klik di luar content juga bisa menutup popup
-    popup.addEventListener('click', e => {
-      if (e.target === popup) popup.style.display = 'none';
-    });
-  });
-</script>
 </body>
 </html>
